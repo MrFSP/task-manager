@@ -6,10 +6,21 @@ FactoryBot.define do
     :avatar,
     :name,
     :description,
-    :state,
     :expired_at,
   ] do |n|
     "string#{n}"
+  end
+
+  sequence :state do |n|
+    [
+      :new_task,
+      :in_development,
+      :in_qa,
+      :in_code_review,
+      :ready_for_release,
+      :released,
+      :archived
+    ][rand(0..6)]
   end
 
   sequence :email do |n|
