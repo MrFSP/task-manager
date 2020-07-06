@@ -11,7 +11,7 @@ FactoryBot.define do
     "string#{n}"
   end
 
-  sequence :state do |n|
+  sequence :state do |_n|
     [
       :new_task,
       :in_development,
@@ -19,7 +19,7 @@ FactoryBot.define do
       :in_code_review,
       :ready_for_release,
       :released,
-      :archived
+      :archived,
     ][rand(0..6)]
   end
 
