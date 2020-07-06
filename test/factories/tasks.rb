@@ -4,7 +4,6 @@ FactoryBot.define do
     description
     author { nil }
     assignee { nil }
-    state
     expired_at
 
     trait :author do
