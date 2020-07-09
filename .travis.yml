@@ -1,3 +1,5 @@
+language: ruby
+dist: bionic
 sudo: required
 services:
   - docker
@@ -10,5 +12,6 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose build
   - docker-compose run --rm web /bin/sh -c "bundle install; RAILS_ENV=test  bundle exec rails db:create db:migrate"
+  - docker-compose run --rm web /bin/sh -c "yarn install --check-files"
 script:
   - docker-compose run --rm web /bin/sh -c "RAILS_ENV=test  bundle exec rake test"
