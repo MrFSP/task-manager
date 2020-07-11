@@ -24,6 +24,10 @@ gem 'state_machines'
 gem 'state_machines-activerecord'
 gem 'slim-rails'
 gem 'i18n'
+gem 'kaminari'
+gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'responders'
+gem 'active_model_serializers'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -34,6 +38,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'rubocop'
+  gem 'minitest-reporters'
 end
 
 group :development do
